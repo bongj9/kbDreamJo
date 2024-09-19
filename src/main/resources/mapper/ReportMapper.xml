@@ -1,0 +1,13 @@
+<!-- src/main/resources/mapper/ReportMapper.xml -->
+<mapper namespace="com.example.report.repository.ReportMapper">
+
+    <insert id="insertReport" parameterType="com.example.report.domain.Report">
+        INSERT INTO report (address, detail_address, deposit_amount, file_path)
+        VALUES (#{address}, #{detailAddress}, #{depositAmount}, #{filePath})
+    </insert>
+
+    <select id="getReportById" resultType="com.example.report.domain.Report">
+        SELECT * FROM report WHERE id = #{id}
+    </select>
+
+</mapper>
