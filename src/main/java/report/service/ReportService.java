@@ -31,6 +31,6 @@ public class ReportService {
 
     public ReportDto getReport(Long id) {
         Report report = reportMapper.getReportById(id);  // MyBatis를 사용한 데이터 조회
-        return new ReportDto(report.getAddress(), report.getDetailAddress(), report.getDepositAmount(), report.getFilePath());
+        return new ReportDto(report.getAddress(), report.getDetailAddress(), report.getDepositAmount());
     }
 }

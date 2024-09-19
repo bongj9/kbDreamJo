@@ -7,8 +7,8 @@ import report.domain.Report;
 
 public interface ReportMapper {
 
-    @Insert("INSERT INTO report (address, detail_address, deposit_amount, file_path) " +
-            "VALUES (#{address}, #{detailAddress}, #{depositAmount}, #{filePath})")
+    @Insert("INSERT INTO report (address, detail_address, deposit_amount) " +
+            "VALUES (#{address}, #{detailAddress}, #{depositAmount}")
     void insertReport(Report report);
 
     @Select("SELECT * FROM report WHERE id = #{id}")
