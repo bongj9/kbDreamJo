@@ -18,24 +18,19 @@ public class ReportService {
     @Autowired
     private ReportMapper reportMapper;
 
-    public void createReport(ReportDto reportDto, MultipartFile file) throws IOException {
-        // 파일 저장 로직
-        String fileName = UUID.randomUUID().toString() + "_" + file.getOriginalFilename();
-        String filePath = "uploads/" + fileName;
-        file.transferTo(new File(filePath));
+    public void createReport(ReportDto reportDto) throws IOException {
 
         // Report 객체 생성 및 데이터베이스 저장
         Report report = new Report();
         report.setAddress(reportDto.getAddress());
         report.setDetailAddress(reportDto.getDetailAddress());
         report.setDepositAmount(reportDto.getDepositAmount());
-        report.setFilePath(filePath);
 
         reportMapper.insertReport(report);  // MyBatis를 사용한 데이터 삽입
     }
 
     public ReportDto getReport(Long id) {
         Report report = reportMapper.getReportById(id);  // MyBatis를 사용한 데이터 조회
-        return new ReportDto(report.getAddress(), report.getDetailAddress(), report.getDepositAmount(), report.getFilePath());
+        return new ReportDto(report.getAddress(), report.getDetailAddress(), report.getDepositAmount());
     }
 }

@@ -4,14 +4,13 @@ public class ReportDto {
     private String address;
     private String detailAddress;
     private int depositAmount;
-    private String filePath;
+
 
     // 생성자
-    public ReportDto(String address, String detailAddress, int depositAmount, String filePath) {
+    public ReportDto(String address, String detailAddress, int depositAmount) {
         this.address = address;
         this.detailAddress = detailAddress;
         this.depositAmount = depositAmount;
-        this.filePath = filePath;
     }
 
     public String getAddress() {
@@ -36,13 +35,5 @@ public class ReportDto {
 
     public void setDetailAddress(String detailAddress) {
         this.detailAddress = detailAddress;
-    }
-
-    public String getFilePath() {
-        return filePath;
-    }
-
-    public void setFilePath(String filePath) {
-        this.filePath = filePath;
     }
 }

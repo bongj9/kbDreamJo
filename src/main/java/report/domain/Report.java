@@ -5,7 +5,7 @@ public class Report {
     private String address;
     private String detailAddress;
     private int depositAmount;
-    private String filePath;
+
 
     // Getters and Setters
 
@@ -31,14 +31,6 @@ public class Report {
 
     public void setDetailAddress(String detailAddress) {
         this.detailAddress = detailAddress;
-    }
-
-    public String getFilePath() {
-        return filePath;
-    }
-
-    public void setFilePath(String filePath) {
-        this.filePath = filePath;
     }
 
     public Long getId() {

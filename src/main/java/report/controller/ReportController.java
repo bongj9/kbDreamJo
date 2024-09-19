@@ -19,13 +19,11 @@ public class ReportController {
 
     // 리포트 생성 API
     @PostMapping("/create")
-    public ResponseEntity<?> createReport(
-            @RequestPart("data") ReportDto reportDto,
-            @RequestPart("file") MultipartFile file) throws IOException {
-
-        reportService.createReport(reportDto, file);
+    public ResponseEntity<?> createReport(@RequestBody ReportDto reportDto) throws IOException {
+        reportService.createReport(reportDto);
         return ResponseEntity.ok().build();  // 성공 응답 반환
     }
+
 
     // 리포트 조회 API
     @GetMapping("/{id}")
